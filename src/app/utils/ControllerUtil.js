@@ -4,9 +4,12 @@ class ControllerUtils {
   }
 
   /**
-   *
+   * Default response handler pattern.
+   * When the promise resulted in a exception, we validate if is a controled
+   * exception or a not known exception (returning the right response or passing
+   * the threatment to app http 500 default handling).
    * @param {Response} res
-   * @param {Promise} promise
+   * @param {Promise} promise promise started
    */
   async defaultHandler(res, promise) {
     try {

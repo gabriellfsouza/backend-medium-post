@@ -2,6 +2,9 @@ import mongoose from 'mongoose';
 
 import mongoConfig from './configs/mongoConfig';
 
+/**
+ * This class is used to make connections between all databases at a single point.
+ */
 class Database {
   constructor() {
     this.mongo();

@@ -17,7 +17,8 @@
     "express-async-errors": "^3.1.1",
     "mongoose": "^5.9.3",
     "sucrase": "^3.12.1",
-    "youch": "^2.0.10"
+    "youch": "^2.0.10",
+    "yup": "^0.28.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

@@ -6,8 +6,8 @@ import GetToDoService from './GetToDoService';
 
 class UpdateToDoService {
   /**
-   *
-   * @param {Schema.Types.ObjectId} _id
+   * Update to-do task data based on _id
+   * @param {ObjectId} _id
    * @param {ToDo} data
    * @returns {Document}
    */
