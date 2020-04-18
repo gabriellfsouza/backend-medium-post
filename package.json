@@ -7,6 +7,7 @@
     "dev": "nodemon src/server.js --ignore __tests__",
     "debug": "node --inspect-brk -r sucrase/register src/server.js",
     "lint": "eslint \"**/*.js\" --ignore-pattern node_modules/ --ignore-pattern dist/",
+    "test": "jest",
     "build": "sucrase ./src -d ./dist --transforms imports",
     "start": "node ./dist/server.js"
   },
@@ -21,9 +22,16 @@
     "yup": "^0.28.1"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^1.1.5",
+    "@sucrase/jest-plugin": "^2.0.0",
+    "@types/jest": "^25.2.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.0",
-    "nodemon": "^2.0.2"
+    "factory-girl": "^5.0.4",
+    "faker": "^4.1.0",
+    "jest": "^25.3.0",
+    "nodemon": "^2.0.2",
+    "supertest": "^4.0.2"
   }
 }

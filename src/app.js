@@ -1,4 +1,8 @@
-import 'dotenv/config';
+/* eslint-disable import/first */
+import { config } from 'dotenv';
+
+config({ path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env' });
+
 import cors from 'cors';
 import express from 'express';
 import 'express-async-errors';
