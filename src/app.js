@@ -1,9 +1,15 @@
-import 'dotenv';
+/* eslint-disable import/first */
+import { config } from 'dotenv';
+
+config({ path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env' });
+
 import cors from 'cors';
 import express from 'express';
 import 'express-async-errors';
 import Youch from 'youch';
 
+import './app/validators/ValidationError';
+import './database';
 import routes from './routes';
 /**
  * Base app class.
@@ -37,7 +43,7 @@ class App {
    */
   exceptionHandler() {
     this.server.use(async (err, req, res, _next) => {
-      if (process.env.NODE_ENV === 'development') {
+      if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
         const errors = await new Youch(err, req).toJSON();
         return res.status(500).json(errors);
       }

@@ -1,0 +1,105 @@
+{
+	"variables": [],
+	"info": {
+		"name": "To-dos tasks",
+		"_postman_id": "99420c7c-50fa-adac-88bd-fe6233721341",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3333/v1/api/todos?text=my to-do task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"v1",
+						"api",
+						"todos"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "my to-do task",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Show",
+			"request": {
+				"url": "http://localhost:3333/v1/api/todos/5e5f6f1916e1d24c406d2ed2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Store",
+			"request": {
+				"url": "http://localhost:3333/v1/api/todos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"my to-do task\",\n\t\"checked\": false\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"url": "http://localhost:3333/v1/api/todos/5e5f6f1916e1d24c406d2ed2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"my to-do task\",\n\t\"checked\": false\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"url": "http://localhost:3333/v1/api/todos/5e5f6f1916e1d24c406d2ed2",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
